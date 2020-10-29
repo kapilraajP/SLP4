@@ -11,7 +11,7 @@ function testGetByCity(){
 
     WClient newClient = new(config);
 
-    json|error result =  newClient.getByCity("Jaffna");
+    json|error result =  newClient->getByCity("Jaffna");
 
     log:printInfo(<anydata>result);
     //test:assertEquals() We cant use because data change with time
@@ -34,7 +34,7 @@ function testGetByCoordinates(){
     WClient newclient = new(config);
 
 
-    json|error result = newclient.getByCoordinates("9.66","80.02");
+    json|error result = newclient->getByCoordinates("9.66","80.02");
 
     if result is json{
             io:println(result);
