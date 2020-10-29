@@ -20,7 +20,7 @@ public class WClient{
         self.newClient = new (self.apiUrl);
     }
 
-    public function getByCity(string? city) returns  @tainted json|error{
+    public remote function getByCity(string? city) returns  @tainted json|error{
 
         http:Response? result = new;
 
@@ -58,7 +58,7 @@ public class WClient{
 
 
 
-    public function getByCoordinates(string lat,string lon) returns @tainted json|error{
+    public remote function getByCoordinates(string lat,string lon) returns @tainted json|error{
 
         var response = self.newClient->get(string `?lat=${lat}&lon=${lon}&appid=${self.apiID}`);
 
